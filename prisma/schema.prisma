@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model ResumeContent {
+  id        Int      @id @default(1)
+  data      String   @default("{}")
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String
+  titleEn     String   @default("")
+  description String
+  descriptionEn String @default("")
+  techStack   String
+  githubUrl   String   @default("")
+  demoUrl     String   @default("")
+  imageUrl    String   @default("")
+  category    String   @default("ai")
+  featured    Boolean  @default(false)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

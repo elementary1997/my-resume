@@ -1,0 +1,163 @@
+/* Aurora V2 theme variables */
+.v2 {
+  --v2-bg: #030014;
+  --v2-bg-card: rgba(139, 92, 246, 0.05);
+  --v2-bg-glass: rgba(10, 5, 40, 0.75);
+  --v2-border: rgba(139, 92, 246, 0.2);
+  --v2-violet: #8b5cf6;
+  --v2-cyan: #22d3ee;
+  --v2-emerald: #10b981;
+  --v2-gold: #f59e0b;
+  --v2-pink: #ec4899;
+  --v2-text: #f1f5f9;
+  --v2-muted: #94a3b8;
+}
+
+.v2.light {
+  --v2-bg: #f5f3ff;
+  --v2-bg-card: rgba(139, 92, 246, 0.06);
+  --v2-bg-glass: rgba(245, 243, 255, 0.85);
+  --v2-border: rgba(139, 92, 246, 0.25);
+  --v2-text: #1e1b4b;
+  --v2-muted: #6b7280;
+}
+
+/* Gradient text */
+.v2-gradient-text {
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee, #10b981);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.v2-gradient-text-2 {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6, #22d3ee);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Aurora blobs */
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+@keyframes blob-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes blob-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-50px, 30px) scale(0.9); }
+  66% { transform: translate(30px, -40px) scale(1.1); }
+}
+
+@keyframes blob-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, 40px) scale(1.05); }
+}
+
+.blob-animate-1 { animation: blob-1 10s ease-in-out infinite; }
+.blob-animate-2 { animation: blob-2 13s ease-in-out infinite; }
+.blob-animate-3 { animation: blob-3 8s ease-in-out infinite; }
+
+/* Gradient border card */
+.v2-card {
+  position: relative;
+  background: var(--v2-bg-glass);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.v2-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(139,92,246,0.4), rgba(34,211,238,0.2), rgba(16,185,129,0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.v2-card:hover::before {
+  background: linear-gradient(135deg, rgba(139,92,246,0.7), rgba(34,211,238,0.5), rgba(16,185,129,0.4));
+}
+
+/* Bento grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .bento-grid { grid-template-columns: 1fr; }
+}
+
+/* Section number */
+.section-num {
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  opacity: 0.05;
+  user-select: none;
+  font-family: 'Inter', sans-serif;
+  color: var(--v2-violet);
+}
+
+/* Skill bar */
+.skill-bar-track {
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: rgba(139, 92, 246, 0.15);
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--v2-violet), var(--v2-cyan));
+  transform-origin: left;
+}
+
+/* V2 badge */
+.v2-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  background: rgba(139, 92, 246, 0.08);
+  color: var(--v2-text);
+  transition: all 0.2s;
+}
+
+.v2-badge:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+  transform: translateY(-1px);
+}
