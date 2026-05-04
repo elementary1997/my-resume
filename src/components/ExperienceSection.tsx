@@ -15,7 +15,7 @@ function ExperienceCard({
   index,
   lang,
 }: {
-  job: typeof resumeData.experience[0]
+  job: ResumeData['experience'][0]
   index: number
   lang: 'ru' | 'en'
 }) {

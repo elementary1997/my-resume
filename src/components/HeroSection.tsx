@@ -58,7 +58,7 @@ const terminalLines = [
 export default function HeroSection({ data }: { data: ResumeData }) {
   const resumeData = data
   const { lang } = useApp()
-  const phrases = tr(t.hero.typing, lang) as string[]
+  const phrases = t.hero.typing[lang]
   const typed = useTyping(phrases)
   const [visibleLines, setVisibleLines] = useState(0)
 

@@ -31,7 +31,7 @@ function useTyping(phrases: string[], speed = 65, pause = 2200) {
 
 export default function HeroV2({ data }: { data: ResumeData }) {
   const { lang } = useApp()
-  const phrases = tr(t.hero.typing, lang) as string[]
+  const phrases = t.hero.typing[lang]
   const typed = useTyping(phrases)
 
   const stats = [

@@ -367,7 +367,7 @@ function ResumeTab({ showToast }: { showToast: (m: string, ok?: boolean) => void
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
                 <Field label="Стек (через запятую)" value={(job.stack ?? []).join(', ')} onChange={v => {
                   const next = [...data.experience]
-                  next[i] = { ...next[i], stack: v.split(',').map(s => s.trim()).filter(Boolean) }
+                  next[i] = { ...next[i], stack: v.split(',').map(s => s.trim()).filter(Boolean) } as ResumeData['experience'][0]
                   setField(['experience'], next)
                 }} />
               </div>

@@ -36,8 +36,8 @@ export const resumeData = {
         'Implementation and configuration of new services',
         'Monitoring and alerting setup for internal and customer services',
       ],
-      achievements: [],
-      achievementsEn: [],
+      achievements: [] as string[],
+      achievementsEn: [] as string[],
     },
     {
       title: 'DevOps-инженер',
@@ -47,8 +47,8 @@ export const resumeData = {
       period: 'Сентябрь 2024 — настоящее время',
       periodEn: 'September 2024 — present',
       stack: ['Ansible', 'Terraform', 'Grafana', 'Prometheus', 'Alertmanager', 'ArgoCD', 'Bamboo', 'Yandex Cloud', 'Git'],
-      duties: [],
-      dutiesEn: [],
+      duties: [] as string[],
+      dutiesEn: [] as string[],
       achievements: [
         'Спроектировал инфраструктуру WMS, внедрив IaC-подход с использованием Ansible и Terraform согласно best practices DevOps',
         'Участвовал в разработке системы управления конфигурациями на Ansible и реализовал стандартизированные роли и pipeline\'ы внедрения',
@@ -70,8 +70,8 @@ export const resumeData = {
       period: 'Сентябрь 2023 — Август 2024',
       periodEn: 'September 2023 — August 2024',
       stack: ['SpaceVM', 'RedVirt', 'Zvirt', 'VMManager', 'SpaceVDI', 'Termidesk', 'RuBackup', 'CyberBackup', 'OpenVPN', 'Zabbix', 'Grafana', 'Prometheus', 'ALD Pro', 'RED Adm', 'Astra Linux', 'Red OS'],
-      duties: [],
-      dutiesEn: [],
+      duties: [] as string[],
+      dutiesEn: [] as string[],
       achievements: [
         'Тестировал продукты российского ПО (Astra, Ред Софт и другие), проверяя совместимость с инфраструктурой заказчика',
         'Внедрил решения ALD Pro, Brest, CyberBackup и RuBackup, повысив надёжность инфраструктуры и сократив время резервного восстановления',
@@ -92,8 +92,8 @@ export const resumeData = {
       companyEn: 'Factory',
       period: 'Сентябрь 2023 — Август 2024',
       periodEn: 'September 2023 — August 2024',
-      duties: [],
-      dutiesEn: [],
+      duties: [] as string[],
+      dutiesEn: [] as string[],
       achievements: [
         'Поддержание работоспособности серверов и работа с СХД',
         'Развертывание систем (Nextcloud, KSMG и т.д.), обновление и настройка',
