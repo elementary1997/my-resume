@@ -7,10 +7,11 @@ async function isAuthed(req: NextRequest) {
   return token && await verifyToken(token)
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!await isAuthed(req)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const id = parseInt(params.id)
+  const { id: idStr } = await params
+  const id = parseInt(idStr)
   const body = await req.json()
 
   const project = await prisma.project.update({
@@ -32,10 +33,11 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   return NextResponse.json(project)
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!await isAuthed(req)) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const id = parseInt(params.id)
+  const { id: idStr } = await params
+  const id = parseInt(idStr)
   await prisma.project.delete({ where: { id } })
   return NextResponse.json({ ok: true })
 }
